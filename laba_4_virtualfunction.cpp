@@ -1,10 +1,10 @@
-/* Створити клас TNumber з віртуальними методами для знаходження суми цифр та
-знаходження першої/останньої цифри.
-На основі цього класу створити класи-нащадки TIntNumber та TRealNumber,
-у яких реалізовано перевизначені віртуальні методи.
-Створити m об’єктів цілих чисел та n
-об’єктів дійсних чисел (дані згенерувати випадковим чином).
-Знайти суму перших цифр цілих чисел та суму останніх цифр дійсних чисел. */
+/* РЎС‚РІРѕСЂРёС‚Рё РєР»Р°СЃ TNumber Р· РІС–СЂС‚СѓР°Р»СЊРЅРёРјРё РјРµС‚РѕРґР°РјРё РґР»СЏ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ СЃСѓРјРё С†РёС„СЂ С‚Р°
+Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ РїРµСЂС€РѕС—/РѕСЃС‚Р°РЅРЅСЊРѕС— С†РёС„СЂРё.
+РќР° РѕСЃРЅРѕРІС– С†СЊРѕРіРѕ РєР»Р°СЃСѓ СЃС‚РІРѕСЂРёС‚Рё РєР»Р°СЃРё-РЅР°С‰Р°РґРєРё TIntNumber С‚Р° TRealNumber,
+Сѓ СЏРєРёС… СЂРµР°Р»С–Р·РѕРІР°РЅРѕ РїРµСЂРµРІРёР·РЅР°С‡РµРЅС– РІС–СЂС‚СѓР°Р»СЊРЅС– РјРµС‚РѕРґРё.
+РЎС‚РІРѕСЂРёС‚Рё m РѕР±вЂ™С”РєС‚С–РІ С†С–Р»РёС… С‡РёСЃРµР» С‚Р° n
+РѕР±вЂ™С”РєС‚С–РІ РґС–Р№СЃРЅРёС… С‡РёСЃРµР» (РґР°РЅС– Р·РіРµРЅРµСЂСѓРІР°С‚Рё РІРёРїР°РґРєРѕРІРёРј С‡РёРЅРѕРј).
+Р—РЅР°Р№С‚Рё СЃСѓРјСѓ РїРµСЂС€РёС… С†РёС„СЂ С†С–Р»РёС… С‡РёСЃРµР» С‚Р° СЃСѓРјСѓ РѕСЃС‚Р°РЅРЅС–С… С†РёС„СЂ РґС–Р№СЃРЅРёС… С‡РёСЃРµР». */
 
 
 #include <iostream>
@@ -16,7 +16,7 @@
 #include <Windows.h>
 
 using namespace std;
-//Абстрактний клас tNumber
+//РђР±СЃС‚СЂР°РєС‚РЅРёР№ РєР»Р°СЃ tNumber
 class TNumber {
 protected:
     double m_number;
@@ -29,12 +29,12 @@ public:
     virtual unsigned int getLastDigit() const = 0;
 };
 
-//Клас-нащадок TIntNumber
+//РљР»Р°СЃ-РЅР°С‰Р°РґРѕРє TIntNumber
 class TIntNumber : public TNumber{
 public:
     TIntNumber(int givennum) :TNumber(givennum) {}
 
-    //Метод знаходження суми цифр
+    //РњРµС‚РѕРґ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ СЃСѓРјРё С†РёС„СЂ
 
     virtual  unsigned int getSumofDigits() const override {
         unsigned int sum = 0;
@@ -49,7 +49,7 @@ public:
         return sum;
     }
 
-    //Метод знаходження першої цифри
+    //РњРµС‚РѕРґ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ РїРµСЂС€РѕС— С†РёС„СЂРё
 
     virtual unsigned int getFirstDigit() const override {
         unsigned int firstdigit= 0;
@@ -67,7 +67,7 @@ public:
         return firstdigit;
     }
 
-    //Метод для знаходження останньої цифри
+    //РњРµС‚РѕРґ РґР»СЏ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ РѕСЃС‚Р°РЅРЅСЊРѕС— С†РёС„СЂРё
 
     virtual unsigned int getLastDigit() const override
     { 
@@ -81,7 +81,7 @@ class TRealNumber : public TNumber {
 public:
     TRealNumber(double givennum) :TNumber(givennum) {}
 
-    //Метод знаходження суми цифр
+    //РњРµС‚РѕРґ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ СЃСѓРјРё С†РёС„СЂ
 
     virtual  unsigned int getSumofDigits() const override {
         unsigned  int sum = 0;
@@ -98,7 +98,7 @@ public:
         return sum;
     }
 
-    //Метод знаходження першої цифри
+    //РњРµС‚РѕРґ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ РїРµСЂС€РѕС— С†РёС„СЂРё
 
     virtual unsigned int getFirstDigit() const override {
         unsigned int firstdigit = 0;
@@ -111,7 +111,7 @@ public:
         return firstdigit;
     }
 
-    //Метод для знаходження останньої цифри
+    //РњРµС‚РѕРґ РґР»СЏ Р·РЅР°С…РѕРґР¶РµРЅРЅСЏ РѕСЃС‚Р°РЅРЅСЊРѕС— С†РёС„СЂРё
 
     virtual unsigned int getLastDigit() const override {
         double number = fabs(m_number);
@@ -143,15 +143,15 @@ int main()
 
     for (int i = 0; i < n; ++i) {
         int randomInt = rand() % 1001;
-        cout <<"Випадкове ціле число згенероване під номером: "<<i<<" = " << randomInt << endl;
+        cout <<"Р’РёРїР°РґРєРѕРІРµ С†С–Р»Рµ С‡РёСЃР»Рѕ Р·РіРµРЅРµСЂРѕРІР°РЅРµ РїС–Рґ РЅРѕРјРµСЂРѕРј: "<<i<<" = " << randomInt << endl;
         numbers.push_back(new TIntNumber(randomInt));
     }
     for (int i = 0; i < m; ++i) {
         double randomReal = static_cast<double>((rand() % 1001) / 10.0 - 500);
-        cout << "Випадкове дійсне число згенероване під номером: " << i << " = " << randomReal << endl;
+        cout << "Р’РёРїР°РґРєРѕРІРµ РґС–Р№СЃРЅРµ С‡РёСЃР»Рѕ Р·РіРµРЅРµСЂРѕРІР°РЅРµ РїС–Рґ РЅРѕРјРµСЂРѕРј: " << i << " = " << randomReal << endl;
         numbers.push_back(new TRealNumber(randomReal));
     }
-    //Знайти суму перших цифр цілих чисел та суму останніх цифр дійсних чисел.
+    //Р—РЅР°Р№С‚Рё СЃСѓРјСѓ РїРµСЂС€РёС… С†РёС„СЂ С†С–Р»РёС… С‡РёСЃРµР» С‚Р° СЃСѓРјСѓ РѕСЃС‚Р°РЅРЅС–С… С†РёС„СЂ РґС–Р№СЃРЅРёС… С‡РёСЃРµР».
 
     unsigned int sumoffirstintnum = 0;
     for (int i = 0; i < n; i++) {
@@ -163,8 +163,8 @@ int main()
         sumoflastrealnum += numbers[i]->getLastDigit();
     }
 
-    cout << "Сума перших цифр цілих чисел: " << sumoffirstintnum << endl;
-    cout << "Сума останніх цифр дійсних чисел: " << sumoflastrealnum << endl;
+    cout << "РЎСѓРјР° РїРµСЂС€РёС… С†РёС„СЂ С†С–Р»РёС… С‡РёСЃРµР»: " << sumoffirstintnum << endl;
+    cout << "РЎСѓРјР° РѕСЃС‚Р°РЅРЅС–С… С†РёС„СЂ РґС–Р№СЃРЅРёС… С‡РёСЃРµР»: " << sumoflastrealnum << endl;
     cout << 441.1 - 441 << endl;
     float a = 441.1;
     float b = static_cast<int>(a);
